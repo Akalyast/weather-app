@@ -51,7 +51,8 @@ const WeatherDetails = ({ icon, temp, city, country,Lat,Long ,humidity,wind}) =>
 };
 
 function App() {
-  let api_key="ca913d35057d3e931ee3277704a33899";
+  let api_key = import.meta.env.VITE_WEATHER_API_KEY;
+
   const [text,setText]=useState("Chennai");
   const[icon,setIcon]=useState(sunIcon);
   const[temp,settemp]=useState(0);
