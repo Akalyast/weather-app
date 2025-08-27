@@ -1,8 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
-*{
-  font-family: "Roboto Condensed" ,sans-serif;
+
+* {
+  font-family: "Roboto Condensed", sans-serif;
 }
-body{
+
+body {
   margin: 0;
   padding: 0;
   background: linear-gradient(to bottom, #00ffff 59%, #99ccff 85%);
@@ -12,14 +14,16 @@ body{
   justify-content: center;
   align-items: center;
 }
-.container{
-  width:800px;
+
+.container {
+  width: 800px;
   padding: 20px;
   background: linear-gradient(to bottom, #ccffff 51%, #ffffcc 86%);
   border-radius: 8px;
-  box-shadow:  10px 10px 5px gray;
+  box-shadow: 10px 10px 5px gray;
 }
-.input-container{
+
+.input-container {
   display: flex;
   width: 100%;
   align-items: center;
@@ -27,55 +31,70 @@ body{
   border-radius: 10px;
   overflow: hidden;
 }
-.cityInput{
-  flex:1;
+
+.cityInput {
+  flex: 1;
   height: 30px;
   border: none;
   font-size: 16px;
   outline: none;
   padding: 10px;
-  background:linear-gradient(to bottom, #ccffff 51%, #ccffff 72%);
+  background: linear-gradient(to bottom, #ccffff 51%, #ccffff 72%);
 }
-.search-icon{
+
+.search-icon {
   padding: 10px;
   height: 30px;
   cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-.search-icon img{
-  margin-top: 5px;
+
+.search-icon img {
+  width: 24px;
+  height: 24px;
+  margin-top: 0;
 }
-.image{
+
+.image {
   text-align: center;
   height: 150px;
   margin-bottom: 10px;
 }
-.image img{
+
+.image img {
   width: 160px;
   height: 160px;
 }
+
 .temp,
 .location,
-.country{
+.country {
   margin-top: 5px;
   font-size: 35px;
   color: #333;
   text-transform: uppercase;
   text-align: center;
 }
-.temp{
+
+.temp {
   font-weight: 500;
 }
-.location{
+
+.location {
   color: #ffbc00;
   font-weight: 400;
   font-size: 40px;
 }
-.country{
-  font-size: 18x;
+
+.country {
+  font-size: 18px;
   color: #888;
   font-weight: 500;
 }
-.cord{
+
+.cord {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -83,54 +102,179 @@ body{
   margin-top: 10px;
   text-align: center;
 }
-.cord div{
+
+.cord div {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   padding: 10px;
 }
-.cord div span{
+
+.cord div span {
   font-size: 20px;
 }
+
 .humidity-percent,
 .wind-percent,
-.cord div span :nth-child(2){
+.cord div span :nth-child(2) {
   font-size: 18px;
   font-weight: bold;
   color: #666;
   padding-top: 5px;
 }
-.data-container{
+
+.data-container {
   display: flex;
   justify-content: space-between;
   margin-top: 20px;
 }
-.element{
+
+.element {
   text-align: center;
 }
-.icon{
+
+.icon {
   width: 100px;
   height: 100px;
 }
-.text{
+
+.text {
   font-size: 15px;
   color: #888;
 }
-.copyright{
+
+.copyright {
   text-align: center;
   font-size: 12px;
   color: #888;
 }
-.copyright span{
+
+.copyright span {
   color: #333;
 }
+
 .city-not-found,
 .loading-message,
-.error-message{
+.error-message {
   margin-top: 10px;
   color: #888;
   font-size: 25px;
   font-weight: 400;
   text-align: center;
+}
+
+/* ================= Responsive Media Queries ================= */
+
+/* Tablets (<=1024px) */
+@media screen and (max-width: 1024px) {
+  .container {
+    width: 90%;
+    padding: 15px;
+  }
+
+  .location { font-size: 32px; }
+  .temp { font-size: 28px; }
+  .cord div span { font-size: 18px; }
+  .icon { width: 80px; height: 80px; }
+}
+
+/* Mobile devices (<=768px) */
+@media screen and (max-width: 768px) {
+  body {
+    flex-direction: column;
+    padding: 15px;
+  }
+
+  .container {
+    width: 100%;
+    padding: 12px;
+  }
+
+  .cityInput {
+    font-size: 14px;
+    padding: 8px;
+  }
+
+  .search-icon {
+    width: 45px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .search-icon img {
+    width: 18px;
+    height: 18px;
+  }
+
+  .location { font-size: 28px; }
+  .temp { font-size: 24px; }
+  .country { font-size: 14px; }
+
+  .cord { flex-direction: column; gap: 5px; }
+
+  .data-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+  }
+
+  .icon { width: 70px; height: 70px; }
+}
+
+/* ✅ Fix: Ensure search bar stays visible between 480px–770px */
+@media screen and (min-width: 480px) and (max-width: 770px) {
+  .input-container {
+    display: flex !important;
+    flex-direction: row;
+    width: 100%;
+    margin-bottom: 15px;
+    border: 2px solid black;
+    border-radius: 10px;
+    overflow: hidden;
+  }
+
+  .cityInput {
+    flex: 1;
+    font-size: 14px;
+    padding: 8px;
+  }
+
+  .search-icon {
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+    width: 45px;
+    background: #fff;
+  }
+
+  .search-icon img {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+/* Small Mobile (<=480px) */
+@media screen and (max-width: 480px) {
+  .container { padding: 10px; }
+
+  .cityInput {
+    font-size: 12px;
+    padding: 6px;
+  }
+
+  .search-icon { width: 40px; }
+
+  .search-icon img {
+    width: 16px;
+    height: 16px;
+  }
+
+  .location { font-size: 22px; }
+  .temp { font-size: 20px; }
+  .country { font-size: 12px; }
+  .cord div span { font-size: 14px; }
+  .icon { width: 60px; height: 60px; }
+  .text { font-size: 12px; }
 }
